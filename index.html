@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Konnektoren Challenge Editor</title>
+    
+<script type="module" nonce="vwjAP3JyP97Mg54UTtkdTQ==">
+import init, * as bindings from '/konnektoren-challenge-editor/konnektoren-challenge-editor-bin-8634f415491015e4.js';
+const wasm = await init('/konnektoren-challenge-editor/konnektoren-challenge-editor-bin-8634f415491015e4_bg.wasm');
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+
+<link rel="modulepreload" href="/konnektoren-challenge-editor/konnektoren-challenge-editor-bin-8634f415491015e4.js" crossorigin=anonymous integrity="sha384-HKmW8sXR/LwTAgw5H/adkjzh+Og1gRRwfJ53QHD3P/Cd3SDWDU3rV4zOW31jY+Ga">
+<link rel="preload" href="/konnektoren-challenge-editor/konnektoren-challenge-editor-bin-8634f415491015e4_bg.wasm" crossorigin=anonymous integrity="sha384-cPGNAKwvbIVdUoieyOr4SrEVdKdsv0rtN9dCS8L98pXWKToFccFqU8WI75u7HOKc" as="fetch" type="application/wasm"></head>
+
+<body></body>
+
+</html>
