@@ -4,6 +4,7 @@ use yew::prelude::*;
 pub struct HtmlViewProps {
     pub html: String,
     pub css: String,
+    pub js: String,
 }
 
 #[function_component(HtmlView)]
@@ -14,6 +15,9 @@ pub fn html_view(props: &HtmlViewProps) -> Html {
             <style>
                 {props.css.clone()}
             </style>
+            <script>
+                {props.js.clone()}
+            </script>
             {parsed}
         </div>
     }
