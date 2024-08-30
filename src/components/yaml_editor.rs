@@ -2,14 +2,14 @@ use web_sys::HtmlTextAreaElement;
 use yew::prelude::*;
 
 #[derive(Properties, Clone, PartialEq)]
-pub struct HtmlEditorProps {
-    pub content: String,
+pub struct YamlEditorProps {
+    pub yaml: String,
     pub on_change: Callback<String>,
 }
 
-#[function_component(HtmlEditor)]
-pub fn html_editor(props: &HtmlEditorProps) -> Html {
-    let content = props.content.clone();
+#[function_component(YamlEditor)]
+pub fn yaml_editor(props: &YamlEditorProps) -> Html {
+
     let on_change = props.on_change.clone();
 
     let handle_input = Callback::from(move |e: InputEvent| {
@@ -19,10 +19,10 @@ pub fn html_editor(props: &HtmlEditorProps) -> Html {
     });
 
     html! {
-        <div class="html-editor">
-            <h1>{"HTML Editor"}</h1>
+        <div class="yaml-editor">
+            <h1>{"YAML Editor"}</h1>
             <textarea
-                value={content}
+                value={props.yaml.clone()}
                 oninput={handle_input}
                 cols=30
                 rows=10

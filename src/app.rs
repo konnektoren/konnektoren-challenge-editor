@@ -1,4 +1,4 @@
-use crate::components::{CssEditor, HtmlEditor, HtmlView};
+use crate::components::{CssEditor, HtmlEditor, HtmlView, YamlEditor};
 use yew::prelude::*;
 
 #[function_component(App)]
@@ -11,6 +11,11 @@ padding: 20px;
 }"
         .to_string()
     });
+
+    let yaml_content = use_state(||
+    include_str!("assets/articles.yml").to_string()
+    );
+
 
     let update_html_content = {
         let html_content = html_content.clone();
@@ -26,12 +31,20 @@ padding: 20px;
         })
     };
 
+    let update_yaml_content = {
+        let yaml_content = yaml_content.clone();
+        Callback::from(move |new_content: String| {
+            yaml_content.set(new_content);
+        })
+    };
+
     html! {
-    <div>
+    <div class="app">
         <h1>{"Konnektoren Challenge Editor"}</h1>
         <HtmlEditor content={(*html_content).clone()} on_change={update_html_content} />
         <CssEditor content={(*css_content).clone()} on_change={update_content} />
         <HtmlView html={(*html_content).clone()} css={(*css_content).clone()} />
+        <YamlEditor yaml={(*yaml_content).clone()} on_change={update_yaml_content} />
     </div>
     }
 }

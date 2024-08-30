@@ -19,12 +19,13 @@ pub fn css_editor(props: &CssEditorProps) -> Html {
     });
 
     html! {
-        <div>
+        <div class="css-editor">
             <h1>{"CSS Editor"}</h1>
             <textarea
-                class="css-editor"
                 value={content}
                 oninput={handle_input}
+                cols=30
+                rows=10
             />
         </div>
     }

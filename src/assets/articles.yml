@@ -1,0 +1,51 @@
+!multiple-choice
+  id: "articles"
+  name: "Artikel"
+  options:
+    - id: 0
+      name: "der"
+    - id: 1
+      name: "die"
+    - id: 2
+      name: "das"
+
+  questions:
+    - question: "Haus"
+      help: "Ich habe ein neues Haus gekauft."
+      option: 2
+      image: "fa-regular fa-house-chimney-window"
+    - question: "Hund"
+      help: "Mein Hund ist sehr lieb."
+      option: 0
+      image: "fa-regular fa-dog"
+    - question: "Katze"
+      help: "Meine Katze ist sehr verschmust."
+      option: 1
+      image: "fa-regular fa-cat"
+    - question: "Auto"
+      help: "Mein Auto ist kaputt."
+      option: 2
+      image: "fa-regular fa-car"
+    - question: "Buch"
+      help: "Ich lese ein interessantes Buch."
+      option: 2
+      image: "fa-regular fa-book"
+    - question: "Stuhl"
+      help: "Ich habe einen neuen Stuhl gekauft."
+      option: 0
+      image: "fa-regular fa-chair"
+    - question: "Tisch"
+      help: "Ich habe einen neuen Tisch gekauft."
+      option: 0
+    - question: "Tür"
+      help: "Ich habe eine neue Tür gekauft."
+      option: 1
+      image: "fa-regular fa-door-open"
+    - question: "Lampe"
+      help: "Ich habe eine neue Lampe gekauft."
+      option: 1
+      image: "fa-regular fa-lightbulb"
+    - question: "Bett"
+      help: "Ich habe ein neues Bett gekauft."
+      option: 2
+      image: "fa-bed"
