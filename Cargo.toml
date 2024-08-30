@@ -13,11 +13,13 @@ path = "src/main.rs"
 
 [dependencies]
 console_log = "1.0"
+gloo = { version = "0.11.0", features = ["net", "utils"] }
 log = "0.4.21"
 serde_json = "1.0.117"
 serde_yaml = "0.9.33"
 wasm-bindgen = { version = "0.2", features = ["serde"] }
 wasm-bindgen-futures = { version = "0.4.42" }
 web-sys = { version = "0.3.*", features = [
-    "HtmlInputElement"] }
+    "HtmlInputElement", "Window"] }
 yew = { version = "0.21", features = ["csr"] }
+js-sys = "0.3.70"

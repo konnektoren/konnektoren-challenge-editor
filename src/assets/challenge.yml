@@ -1,6 +1,9 @@
 !custom
 id: "articles"
 name: "Artikel"
+html: "assets/html.html"
+css: "assets/css.css"
+js: "assets/js.js"
 data:
   options:
     - id: 0
