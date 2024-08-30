@@ -1,13 +1,4 @@
-use yew::prelude::*;
-
-#[function_component(App)]
-fn app() -> Html {
-    html! {
-        <div>
-            <h1>{"Konnektoren Challenge Editor"}</h1>
-        </div>
-        }
-}
+use konnektoren_challenge_editor::prelude::App;
 
 fn main() {
     use log::Level;
