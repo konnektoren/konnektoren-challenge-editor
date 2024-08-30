@@ -9,7 +9,6 @@ pub struct YamlEditorProps {
 
 #[function_component(YamlEditor)]
 pub fn yaml_editor(props: &YamlEditorProps) -> Html {
-
     let on_change = props.on_change.clone();
 
     let handle_input = Callback::from(move |e: InputEvent| {

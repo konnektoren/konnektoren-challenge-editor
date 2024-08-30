@@ -3,19 +3,10 @@ use yew::prelude::*;
 
 #[function_component(App)]
 pub fn app() -> Html {
-    let html_content = use_state(|| "<div class=\"greeting\">Hello World</div>".to_string());
-    let css_content = use_state(|| {
-        ".greeting {
-color: green;
-padding: 20px;
-}"
-        .to_string()
-    });
+    let html_content = use_state(|| include_str!("assets/html.html").to_string());
+    let css_content = use_state(|| include_str!("assets/css.css").to_string());
 
-    let yaml_content = use_state(||
-    include_str!("assets/articles.yml").to_string()
-    );
-
+    let yaml_content = use_state(|| include_str!("assets/articles.yml").to_string());
 
     let update_html_content = {
         let html_content = html_content.clone();
