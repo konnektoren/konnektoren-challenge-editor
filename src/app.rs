@@ -5,7 +5,7 @@ use yew::prelude::*;
 pub fn app() -> Html {
     let html_content = use_state(|| include_str!("assets/html.html").to_string());
     let css_content = use_state(|| include_str!("assets/css.css").to_string());
-    let yaml_content = use_state(|| include_str!("assets/articles.yml").to_string());
+    let yaml_content = use_state(|| include_str!("assets/challenge.yml").to_string());
     let js_content = use_state(|| include_str!("assets/js.js").to_string());
 
     let update_html_content = {
@@ -41,7 +41,8 @@ pub fn app() -> Html {
         <h1>{"Konnektoren Challenge Editor"}</h1>
         <HtmlEditor content={(*html_content).clone()} on_change={update_html_content} />
         <CssEditor content={(*css_content).clone()} on_change={update_content} />
-        <HtmlView html={(*html_content).clone()} css={(*css_content).clone()} js={(*js_content).clone()} />
+        <HtmlView html={(*html_content).clone()} css={(*css_content).clone()}
+            js={(*js_content).clone()} yaml={(*yaml_content).clone()} />
         <YamlEditor yaml={(*yaml_content).clone()} on_change={update_yaml_content} />
         <JsEditor js={(*js_content).clone()} on_change={update_js_content} />
     </div>

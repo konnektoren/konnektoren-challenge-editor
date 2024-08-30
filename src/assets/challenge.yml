@@ -1,6 +1,7 @@
-!multiple-choice
-  id: "articles"
-  name: "Artikel"
+!custom
+id: "articles"
+name: "Artikel"
+data:
   options:
     - id: 0
       name: "der"
@@ -8,7 +9,6 @@
       name: "die"
     - id: 2
       name: "das"
-
   questions:
     - question: "Haus"
       help: "Ich habe ein neues Haus gekauft."
