@@ -1,22 +1,37 @@
-use crate::components::{HtmlEditor, HtmlView};
+use crate::components::{CssEditor, HtmlEditor, HtmlView};
 use yew::prelude::*;
 
 #[function_component(App)]
 pub fn app() -> Html {
-    let content = use_state(|| "".to_string());
+    let html_content = use_state(|| "<div class=\"greeting\">Hello World</div>".to_string());
+    let css_content = use_state(|| {
+        ".greeting {
+color: green;
+padding: 20px;
+}"
+        .to_string()
+    });
+
+    let update_html_content = {
+        let html_content = html_content.clone();
+        Callback::from(move |new_content: String| {
+            html_content.set(new_content);
+        })
+    };
 
     let update_content = {
-        let content = content.clone();
+        let css_content = css_content.clone();
         Callback::from(move |new_content: String| {
-            content.set(new_content);
+            css_content.set(new_content);
         })
     };
 
     html! {
     <div>
         <h1>{"Konnektoren Challenge Editor"}</h1>
-        <HtmlEditor content={(*content).clone()} on_change={update_content} />
-        <HtmlView content={(*content).clone()} />
+        <HtmlEditor content={(*html_content).clone()} on_change={update_html_content} />
+        <CssEditor content={(*css_content).clone()} on_change={update_content} />
+        <HtmlView html={(*html_content).clone()} css={(*css_content).clone()} />
     </div>
     }
 }
